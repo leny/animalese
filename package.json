@@ -3,7 +3,10 @@
   "version": "0.0.1",
   "description": "A small vocoder in Animalese (Animal Crossing), made with React",
   "private": true,
-  "scripts": {},
+  "scripts": {
+    "dev": "npx parcel ./src/index.html",
+    "build": "npx parcel build ./src/index.html"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/leny/animalese.git"
@@ -23,6 +26,7 @@
     "eslint-plugin-unicorn": "^20.0.0",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.2",
+    "parcel-bundler": "^1.12.4",
     "prettier": "^2.0.5"
   },
   "lint-staged": {
@@ -37,5 +41,9 @@
     "hooks": {
       "pre-commit": "npx lint-staged"
     }
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   }
 }
