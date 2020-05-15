@@ -1,0 +1,19 @@
+{
+  "name": "@leny/animalese",
+  "version": "0.0.1",
+  "description": "A small vocoder in Animalese (Animal Crossing), made with React",
+  "private": true,
+  "scripts": {
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leny/animalese.git"
+  },
+  "author": "leny <leny@becode.org>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leny/animalese/issues"
+  },
+  "homepage": "https://github.com/leny/animalese#readme"
+}
