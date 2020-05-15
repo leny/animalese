@@ -1,4 +1,5 @@
 dist
 .cache
+.eslintcache
 
 node_modules
