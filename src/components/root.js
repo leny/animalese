@@ -10,16 +10,33 @@
 
 import React, {useState, useCallback} from "react";
 
-// const AUDIO_PATH = "assets/audio";
+const AUDIO_PATH = "assets/audio";
+
+const wait = ms => new Promise(res => setTimeout(res, ms));
+
+const letters = Object.fromEntries(
+    "abcdefghijklmnopqrstuvwxyz"
+        .split("")
+        .map(letter => [letter, new Audio(`${AUDIO_PATH}/${letter}.mp3`)]),
+);
 
 const Root = () => {
     const [text, setText] = useState("");
 
     const handleSubmit = useCallback(
-        e => {
+        async e => {
             e.preventDefault();
 
-            console.warn("Animalese:", text);
+            await text
+                .toLowerCase()
+                .split("")
+                .reduce(async (prev, letter) => {
+                    await prev;
+
+                    letters[letter] && letters[letter].play();
+
+                    return wait(letters[letter] ? 33 : 75);
+                }, Promise.resolve(true));
         },
         [text],
     );
