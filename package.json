@@ -3,9 +3,7 @@
   "version": "0.0.1",
   "description": "A small vocoder in Animalese (Animal Crossing), made with React",
   "private": true,
-  "scripts": {
-
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/leny/animalese.git"
@@ -15,5 +13,29 @@
   "bugs": {
     "url": "https://github.com/leny/animalese/issues"
   },
-  "homepage": "https://github.com/leny/animalese#readme"
+  "homepage": "https://github.com/leny/animalese#readme",
+  "devDependencies": {
+    "@becode/eslint-config": "^0.9.1",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.0.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-unicorn": "^20.0.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.2",
+    "prettier": "^2.0.5"
+  },
+  "lint-staged": {
+    "*.json": [
+      "npx prettier --write"
+    ],
+    "*.js": [
+      "npx eslint --fix --cache"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npx lint-staged"
+    }
+  }
 }
